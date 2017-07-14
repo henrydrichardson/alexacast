@@ -57,6 +57,7 @@ Vagrant.configure("2") do |config|
   #   vb.memory = "1024"
   # end
   #
+  #
   # View the documentation for the provider you are using for more
   # information on available options.
 
@@ -68,8 +69,18 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
   # SHELL
   config.vm.provision "shell", inline: <<-SHELL
+      apt-get update; apt-get upgrade
       apt-get -y install vim python-pip python-dev libssl-dev libffi-dev
       pip install --upgrade pip cffi
       pip install -r /vagrant/requirements.txt
   SHELL
+
+      #sed -i '/try_files $uri $uri\/ =404;/s/try_files $uri $uri\/ =404;/proxy_pass localhost:8183/' /etc/nginx/sites-enabled/default
+  # The following setups a proxy server on the vagrant machine. Useful if you don't already have a proxy/webserver
+  config.vm.provision "shell", inline: <<-SHELL
+      apt-get -y install nginx
+      sed -i '/#.*snakeoil\.conf;/s/#//' /etc/nginx/sites-enabled/default
+      sed -i '/#.*443.*server;/s/#//' /etc/nginx/sites-enabled/default
+      sed -i '/try_files.*=404;/s/try_files.*=404;/proxy_pass localhost:8183/' /etc/nginx/sites-enabled/default
+      SHELL
 end
