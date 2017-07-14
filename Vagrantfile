@@ -68,7 +68,8 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
   # SHELL
   config.vm.provision "shell", inline: <<-SHELL
-      apt-get -y install vim python-pip python-dev libssl-dev
-      pip install --upgrade cffi
+      apt-get -y install vim python-pip python-dev libssl-dev libffi-dev
+      pip install --upgrade pip cffi
+      pip install -r /vagrant/requirements.txt
   SHELL
 end
