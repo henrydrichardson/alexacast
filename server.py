@@ -84,7 +84,7 @@ def reboot(slots, session):
 
 @app.intent('IncreaseVolume')
 def increase_volume(slots, session):
-    cast.volume_up(0.2))
+    cast.volume_up(0.2)
     return alexandra.respond()
 
 
