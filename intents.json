@@ -23,6 +23,30 @@
     {
       "intent": "Reboot",
       "slots": []
+    },
+    {
+      "intent": "IncreaseVolume",
+      "slots": []
+    },
+    {
+      "intent": "DecreaseVolume",
+      "slots": []
+    },
+    {
+      "intent": "Mute",
+      "slots": []
+    },
+    {
+      "intent": "Unmute",
+      "slots": []
+    },
+    {
+      "intent": "EnableSubtitle",
+      "slots": []
+    },
+    {
+      "intent": "DisableSubtitle",
+      "slots": []
     }
   ]
 }

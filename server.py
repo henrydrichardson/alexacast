@@ -82,5 +82,43 @@ def reboot(slots, session):
     return alexandra.respond()
 
 
+@app.intent('IncreaseVolume')
+def increase_volume(slots, session):
+    cast.volume_up(0.2))
+    return alexandra.respond()
+
+
+@app.intent('DecreaseVolume')
+def increase_volume(slots, session):
+    cast.volume_down(0.2)
+    return alexandra.respond()
+
+
+@app.intent('Mute')
+def mute(slots, session):
+    cast.set_volume_muted(1)
+    return alexandra.respond()
+
+
+@app.intent('Unmute')
+def mute(slots, session):
+    cast.set_volume_muted(True)
+    return alexandra.respond()
+
+
+@app.intent('EnableSubtitle')
+def enable_subtitle(slots, session):
+    mc = cast.media_controller
+    mc.enable_subtitle(0)
+    return alexandra.respond()
+
+
+@app.intent('DisableSubtitle')
+def disable_subtitle(slots, session):
+    mc = cast.media_controller
+    mc.disable_subtitle()
+    return alexandra.respond()
+
+
 if __name__ == '__main__':
     server()

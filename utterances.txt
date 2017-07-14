@@ -11,3 +11,21 @@ Reconnect reconnect
 Reboot reboot
 Reboot restart
 Reboot explode
+IncreaseVolume raise volume
+IncreaseVolume increase volume
+IncreaseVolume make it louder
+DecreaseVolume lower volume
+DecreaseVolume decrease volume
+DecreaseVolume make it quieter
+Mute mute
+Mute shut up
+Mute turn sound off
+Unmute unmute
+Unmute make noise
+Unmute turn on sound
+EnableSubtitle turn on subtitles
+EnableSubtitle enable subtitles
+EnableSubtitle turn subs on
+DisableSubtitle turn off subtitles
+DisableSubtitle disable subtitles
+DisableSubtitle turn subs off
